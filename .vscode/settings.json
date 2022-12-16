@@ -1,0 +1,3 @@
+{
+  "jest.jestCommandLine": "\"PATH=$PATH:~/.nvm/versions/node/v16.13.1/bin\"; npm run test --"
+}
