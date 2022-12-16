@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <div className="container-fluid">
         <NavBar />
-        <div>Test</div>
         <div className="content">
           <Routes>
             <Route path="/" element={<Navigate replace to="/materials" />} />
