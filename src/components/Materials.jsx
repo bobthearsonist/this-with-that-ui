@@ -1,22 +1,17 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default class Materials extends PureComponent {
-  state = {
-    materials: [],
-  };
+export default function Materials(props) {
+  const [materials, setMaterials] = useState([]);
 
-  componentDidMount() {
-    const rehydratedState = localStorage.getItem('materialsData');
-    if (rehydratedState) {
-      this.setState({ materials: JSON.parse(rehydratedState) });
+  useEffect(() => {
+    function loadMaterials() {
+      setMaterials(localStorage.getItem('materialsData'));
     }
-  }
+  });
 
-  render() {
-    return (
-      <React.Fragment>
-        <div>{this.state.materials.length} Materials</div>
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      <div>{materials.length} Materials</div>
+    </React.Fragment>
+  );
 }
