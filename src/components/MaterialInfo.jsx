@@ -13,9 +13,27 @@ export const MaterialInfo = () => {
     navigate('/materials');
   };
 
+  Object.keys(material).forEach((key, index) => {
+    console.log(key, material[key]);
+  });
+
   return (
     <React.Fragment>
       <div>{material.Name} Info</div>
+      <div className="container-fluid">
+        {Object.keys(material).map((key) => {
+          return (
+            <div className="row" key={key}>
+              <div className="col" key="name">
+                {key + ':'}
+              </div>
+              <div className="col" key="val">
+                {material[key]}
+              </div>
+            </div>
+          );
+        })}
+      </div>
       <div className="d-grid gap-2">
         <button
           className="btn btn-primary"
