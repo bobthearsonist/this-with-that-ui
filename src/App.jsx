@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Relationships from './components/Relationships';
 import Materials from './components/Materials';
 import { useEffect, useState } from 'react';
+import { MaterialInfo } from './components/MaterialInfo';
 
 function getMaterials(setMaterials) {
   fetch('materials.json', {
@@ -41,6 +42,10 @@ function App() {
             <Route path="/" element={<Navigate replace to="/materials" />} />
             <Route path="/materials" element={<Materials data={materials} />} />
             <Route path="/relationships" element={<Relationships />} />
+            <Route
+              path="/material/:materialName/info"
+              element={<MaterialInfo />}
+            />
           </Routes>
         </div>
       </div>

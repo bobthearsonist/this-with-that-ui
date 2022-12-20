@@ -1,6 +1,16 @@
 import React from 'react';
+import { MaterialInfo } from './MaterialInfo';
+import { useNavigate } from 'react-router-dom';
 
-export default function Material({ material, key, onInfoSelect }) {
+export default function Material({ material, key }) {
+  const navigate = useNavigate();
+
+  const onInfoSelect = (material) => {
+    navigate('/material/' + material.Name + '/info');
+  };
+  const onMsdsSelect = (material) => {};
+  const onOrderSelect = (material) => {};
+
   return (
     <React.Fragment>
       <div className="row">
@@ -19,14 +29,14 @@ export default function Material({ material, key, onInfoSelect }) {
             <button
               type="button"
               className="btn btn-outline-primary btn-sm"
-              onClick={() => onInfoSelect(material)}
+              onClick={() => onMsdsSelect(material)}
             >
               {'msds'}
             </button>
             <button
               type="button"
               className="btn btn-outline-primary btn-sm"
-              onClick={() => onInfoSelect(material)}
+              onClick={() => onOrderSelect(material)}
             >
               {'order'}
             </button>
