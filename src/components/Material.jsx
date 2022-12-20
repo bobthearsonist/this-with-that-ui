@@ -1,12 +1,13 @@
 import React from 'react';
-import { MaterialInfo } from './MaterialInfo';
 import { useNavigate } from 'react-router-dom';
 
-export default function Material({ material, key }) {
+export default function Material({ material }) {
   const navigate = useNavigate();
 
   const onInfoSelect = (material) => {
-    navigate('/material/' + material.Name + '/info');
+    navigate('/material/' + material.Name + '/info', {
+      state: { ...material },
+    });
   };
   const onMsdsSelect = (material) => {};
   const onOrderSelect = (material) => {};
@@ -14,11 +15,16 @@ export default function Material({ material, key }) {
   return (
     <React.Fragment>
       <div className="row">
-        <div className="col" key={key}>
+        <div className="col" key={material.Name}>
           {material.Name}
         </div>
-        <div className="col" key={key + 'button'}>
-          <div className="btn-group" role="group" aria-label="Basic example">
+        <div className="col" key={material.Name + 'button'}>
+          <div
+            /* TODO shouldn't be a button group, redundant to info page, but I liked learning the element.*/
+            className="btn-group"
+            role="group"
+            aria-label="Basic example"
+          >
             <button
               type="button"
               className="btn btn-outline-primary btn-sm"
