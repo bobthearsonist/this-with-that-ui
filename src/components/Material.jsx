@@ -8,13 +8,29 @@ export default function Material({ material, key, onInfoSelect }) {
           {material.Name}
         </div>
         <div className="col" key={key + 'button'}>
-          <button
-            type="button"
-            className="btn-outline-secondary btn-sm"
-            onClick={() => onInfoSelect(material)}
-          >
-            {'info'}
-          </button>
+          <div className="btn-group" role="group" aria-label="Basic example">
+            <button
+              type="button"
+              className="btn btn-outline-primary btn-sm"
+              onClick={() => onInfoSelect(material)}
+            >
+              {'info'}
+            </button>
+            <button
+              type="button"
+              className="btn btn-outline-primary btn-sm"
+              onClick={() => onInfoSelect(material)}
+            >
+              {'msds'}
+            </button>
+            <button
+              type="button"
+              className="btn btn-outline-primary btn-sm"
+              onClick={() => onInfoSelect(material)}
+            >
+              {'order'}
+            </button>
+          </div>
         </div>
       </div>
     </React.Fragment>
