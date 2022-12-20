@@ -1,17 +1,17 @@
 import React from 'react';
 
-export default function Material({ name, key, msds_id, onItemSelect }) {
+export default function Material({ material, key, onInfoSelect }) {
   return (
     <React.Fragment>
       <div className="row">
         <div className="col" key={key}>
-          {name}
+          {material.Name}
         </div>
-        <div className="col" key={key + msds_id}>
+        <div className="col" key={key + 'button'}>
           <button
             type="button"
             className="btn-outline-secondary btn-sm"
-            onClick={() => onItemSelect()}
+            onClick={() => onInfoSelect(material)}
           >
             {'info'}
           </button>
