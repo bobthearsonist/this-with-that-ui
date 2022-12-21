@@ -10,5 +10,12 @@
     "BrandName": "Windex",
     "Chemical Formula": "NH3",
     "MSDS": "https://www.windex.com/~/media/Files/Windex/US/Products/Ammonia%20D%20MSDS%20Sheet.pdf"
+  },
+  {
+    "Name": "MEDIUM STRENGTH THREADLOCKER BLUE",
+    "BrandName": "Loctite Blue",
+    "Chemical Formula": "Cyanocrylate",
+    "MSDS": "https://itwgbpermatex.wpenginepowered.com/wp-content/uploads/sds/24206.pdf",
+    "TDS": "https://itwgbpermatex.wpenginepowered.com/wp-content/uploads/tds/24206.pdf"
   }
 ]

@@ -7,14 +7,15 @@ export const MaterialInfo = () => {
   //somewhat confusing, that to get state you use location when passing it through the router...
   //   const [material, setMaterial] = useState();
   const location = useLocation();
-  const { MSDS, ...material } = location.state;
+  const { TDS, MSDS, ...material } = location.state;
 
   const handleBackToMaterials = () => {
     navigate('/materials');
   };
 
-  const handleMsds = () => {
-    window.open(MSDS);
+  const handleSheet = (event, sheet) => {
+    // this window open seems to not work well with react
+    window.open(sheet);
   };
 
   return (
@@ -35,8 +36,19 @@ export const MaterialInfo = () => {
         })}
       </div>
       <div className="d-grid gap-2">
-        <button className="btn btn-primary" type="button" onClick={handleMsds}>
+        <button
+          className="btn btn-primary"
+          type="button"
+          onClick={(event) => handleSheet(event, MSDS)}
+        >
           MSDS
+        </button>
+        <button
+          className="btn btn-primary"
+          type="button"
+          onClick={(event) => handleSheet(event, TDS)}
+        >
+          TDS
         </button>
         <button
           className="btn btn-primary"
